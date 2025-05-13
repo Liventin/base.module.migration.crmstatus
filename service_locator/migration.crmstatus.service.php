@@ -3,7 +3,7 @@
 defined('B_PROLOG_INCLUDED') || die;
 
 return [
-    'base.module.handlers.service' => [
+    'base.module.crm.status.service' => [
         'className' => \Base\Module\Src\Migration\CrmStatus\CrmStatusService::class,
         'constructorParams' => [],
     ],
