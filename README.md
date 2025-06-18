@@ -12,14 +12,8 @@ install | update
 
 ```
 "require": {
-    "liventin/base.module.migration.crmstatus": "dev-main"
+    "liventin/base.module.migration.crmstatus": "^1.0.0"
 }
-"repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:liventin/base.module.migration.crmstatus"
-    }
-]
 ```
 redirect (optional)
 ```
