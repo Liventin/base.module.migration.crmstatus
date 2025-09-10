@@ -2,16 +2,14 @@
 
 namespace Base\Module\Src\Migration\CrmStatus;
 
+use Base\Module\Service\Migration\CrmStatus\CrmStatusKanbanEntity;
 use Bitrix\Main\ArgumentException;
 use Bitrix\Main\Loader;
 use Bitrix\Main\LoaderException;
 use Bitrix\Main\NotSupportedException;
-use Bitrix\Main\ObjectNotFoundException;
 use Bitrix\Main\ObjectPropertyException;
 use Bitrix\Main\SystemException;
 use Exception;
-use Psr\Container\NotFoundExceptionInterface;
-use ReflectionException;
 use Base\Module\Service\Migration\CrmStatus\CrmStatusEntity;
 use Base\Module\Service\Migration\CrmStatus\CrmStatusService as ICrmStatusService;
 use Base\Module\Service\LazyService;
@@ -39,11 +37,8 @@ class CrmStatusService implements ICrmStatusService
     /**
      * @return void
      * @throws ArgumentException
-     * @throws NotFoundExceptionInterface
      * @throws NotSupportedException
-     * @throws ObjectNotFoundException
      * @throws ObjectPropertyException
-     * @throws ReflectionException
      * @throws SystemException
      * @throws Exception
      */
@@ -72,11 +67,8 @@ class CrmStatusService implements ICrmStatusService
     /**
      * @return void
      * @throws ArgumentException
-     * @throws NotFoundExceptionInterface
      * @throws NotSupportedException
-     * @throws ObjectNotFoundException
      * @throws ObjectPropertyException
-     * @throws ReflectionException
      * @throws SystemException
      */
     public function reInstall(): void
@@ -107,13 +99,9 @@ class CrmStatusService implements ICrmStatusService
 
     /**
      * @param array $existing
-     * @param CrmStatusEntity $statusClass
+     * @param CrmStatusEntity|CrmStatusKanbanEntity $statusClass
      * @return array
      * @noinspection PhpDocSignatureInspection
-     * @throws NotFoundExceptionInterface
-     * @throws ObjectNotFoundException
-     * @throws ReflectionException
-     * @throws SystemException
      */
     private function prepareUpdateFields(array $existing, string $statusClass): array
     {
@@ -157,13 +145,9 @@ class CrmStatusService implements ICrmStatusService
     }
 
     /**
-     * @param CrmStatusEntity $statusClass
+     * @param CrmStatusEntity|CrmStatusKanbanEntity $statusClass
      * @return array
      * @noinspection PhpDocSignatureInspection
-     * @throws NotFoundExceptionInterface
-     * @throws ObjectNotFoundException
-     * @throws ReflectionException
-     * @throws SystemException
      */
     public function prepareAddFields(string $statusClass): array
     {
